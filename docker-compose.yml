@@ -1,0 +1,22 @@
+version: "3.7"
+services:
+    CPX_0:
+        container_name: CPX_0
+        image: store/citrix/netscalercpx:12.0-56.20
+        ports:
+            -  443
+            -  22
+            -  80
+            -  161/udp
+            -  35021-35030
+        tty: true
+        cap_add:
+            - NET_ADMIN
+        ulimits:
+            core: 2
+        volumes:
+            - .:/cpx
+        environment:
+            -  CPX_CORES=2
+            -  CPX_CONFIG='{"YIELD":"Yes"}'
+            -  EULA=yes
