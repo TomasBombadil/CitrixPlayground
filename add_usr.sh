@@ -1,3 +1,7 @@
+# Script to manually create user with no permissions accessible via SSH key
+#
+# USAGE: ./add_usr.sh -k "<ssh_pub_key>"
+#
 # Args
 	while getopts k: flag
 do
